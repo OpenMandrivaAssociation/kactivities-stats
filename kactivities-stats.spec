@@ -23,7 +23,7 @@ BuildRequires: pkgconfig(Qt5QuickWidgets)
 BuildRequires: pkgconfig(Qt5Test)
 BuildRequires: pkgconfig(Qt5Network)
 BuildRequires: cmake(ECM)
-BuildRequires: cmake(KF5Config)
+BuildRequires: cmake(KF5Config) >= %{version}
 BuildRequires: cmake(KF5Activities)
 BuildRequires: boost-devel
 Requires: %{libname} = %{EVRD}

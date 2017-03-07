@@ -5,9 +5,11 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kactivities-stats
-Version: 5.31.0
+Version: 5.32.0
 Release: 1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
+# Workaround for compile failure caused by apparent QTest bug in Qt 5.9.0alpha
+Patch0: kactivities-stats-5.32.0-qt-5.9.0a-workaround.patch
 Summary: A library for accessing the usage data collected by the activities system
 URL: http://kde.org/
 License: GPL

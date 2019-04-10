@@ -5,8 +5,8 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kactivities-stats
-Version: 5.56.0
-Release: 2
+Version: 5.57.0
+Release: 1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: A library for accessing the usage data collected by the activities system
 URL: http://kde.org/
@@ -26,6 +26,8 @@ BuildRequires: cmake(ECM)
 BuildRequires: cmake(KF5Config) >= %{version}
 BuildRequires: cmake(KF5Activities)
 BuildRequires: boost-devel
+# For QCH format docs
+BuildRequires: qt5-assistant
 Requires: %{libname} = %{EVRD}
 
 %description
@@ -47,9 +49,16 @@ Requires: %{libname} = %{EVRD}
 %description -n %{devname}
 Development files for the KDE Frameworks 5 Activities library.
 
+%package -n %{name}-devel-docs
+Summary: Developer documentation for %{name} for use with Qt Assistant
+Group: Documentation
+Suggests: %{devname} = %{EVRD}
+
+%description -n %{name}-devel-docs
+Developer documentation for %{name} for use with Qt Assistant
+
 %prep
-%setup -q
-%apply_patches
+%autosetup -p1
 %cmake_kde5
 
 %build
@@ -74,3 +83,6 @@ rm -f %{buildroot}%{_libdir}/libkactivitymanagerd_plugin.so
 %{_libdir}/cmake/KF5*
 %{_libdir}/qt5/mkspecs/modules/*.pri
 %{_libdir}/pkgconfig/*
+
+%files -n %{name}-devel-docs
+%{_docdir}/qt5/*.{tags,qch}

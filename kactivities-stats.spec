@@ -27,6 +27,7 @@ BuildRequires: cmake(KF5Config) >= %{version}
 BuildRequires: cmake(KF5Activities)
 BuildRequires: boost-devel
 # For QCH format docs
+BuildRequires: doxygen
 BuildRequires: qt5-assistant
 Requires: %{libname} = %{EVRD}
 

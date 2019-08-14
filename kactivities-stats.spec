@@ -4,7 +4,7 @@
 %define debug_package %{nil}
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
-%global optflags %{optlfags} -O3
+%global optflags %{optflags} -O3
 
 Name: kactivities-stats
 Version: 5.61.0

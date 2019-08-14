@@ -4,9 +4,11 @@
 %define debug_package %{nil}
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
+%global optflags %{optlfags} -O3
+
 Name: kactivities-stats
 Version: 5.61.0
-Release: 1
+Release: 2
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: A library for accessing the usage data collected by the activities system
 URL: http://kde.org/

@@ -7,8 +7,8 @@
 %global optflags %{optflags} -O3
 
 Name: kactivities-stats
-Version: 5.61.0
-Release: 2
+Version: 5.62.0
+Release: 1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: A library for accessing the usage data collected by the activities system
 URL: http://kde.org/
@@ -74,6 +74,8 @@ Developer documentation for %{name} for use with Qt Assistant
 rm -f %{buildroot}%{_libdir}/libkactivitymanagerd_plugin.so
 
 %files
+%{_sysconfdir}/xdg/kactivities-stats.categories
+%{_datadir}/qlogging-categories5/kactivities-stats.categories
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}*

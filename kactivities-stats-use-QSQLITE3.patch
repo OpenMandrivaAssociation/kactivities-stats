@@ -1,0 +1,12 @@
+diff -up kactivities-stats-5.68.0/src/common/database/Database.cpp.omv~ kactivities-stats-5.68.0/src/common/database/Database.cpp
+--- kactivities-stats-5.68.0/src/common/database/Database.cpp.omv~	2020-03-09 16:25:53.721148830 +0100
++++ kactivities-stats-5.68.0/src/common/database/Database.cpp	2020-03-09 16:25:57.647148598 +0100
+@@ -82,7 +82,7 @@ public:
+         m_database =
+             QSqlDatabase::contains(m_connectionName)
+                 ? QSqlDatabase::database(m_connectionName)
+-                : QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"), m_connectionName);
++                : QSqlDatabase::addDatabase(QStringLiteral("QSQLITE3"), m_connectionName);
+ 
+         if (info.openMode == Database::ReadOnly) {
+             m_database.setConnectOptions(QStringLiteral("QSQLITE_OPEN_READONLY"));

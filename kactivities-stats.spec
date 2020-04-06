@@ -7,8 +7,8 @@
 %global optflags %{optflags} -O3
 
 Name: kactivities-stats
-Version: 5.68.0
-Release: 4
+Version: 5.69.0
+Release: 1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: A library for accessing the usage data collected by the activities system
 URL: http://kde.org/

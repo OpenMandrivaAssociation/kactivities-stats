@@ -6,7 +6,7 @@
 %global optflags %{optflags} -O3
 
 Name: kactivities-stats
-Version: 5.90.0
+Version: 5.91.0
 Release: 1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: A library for accessing the usage data collected by the activities system
@@ -82,7 +82,6 @@ rm -f %{buildroot}%{_libdir}/libkactivitymanagerd_plugin.so
 
 %files -n %{devname}
 %{_includedir}/KF5/KActivitiesStats
-%{_includedir}/KF5/kactivitiesstats_version.h
 %{_libdir}/*.so
 %{_libdir}/cmake/KF5*
 %{_libdir}/qt5/mkspecs/modules/*.pri
